@@ -26,7 +26,7 @@
   * JSON Web Tokens (JWT) are used.
   * Make a request to the `/login` endpoint to obtain a token.
   * Authenticated requests are made with the header `Authorization: Bearer <JWT>`
-  * The JWT don't expire automatically but may be reset.
+  * The JWT doesn't expire but may be reset.
 * Localisation:
   * English (US) is default.
   * Cook names can be translated (unless cook was given a name by the user) using the `Accept-Language` header with the [ISO_639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code. For example `Accept-Language: fr`.
@@ -46,8 +46,8 @@ Example:
 {
     "status": "200 OK",
     "statusCode": 200,
-    "data": { ... },
-    "meta": { ... }
+    "data": {},
+    "meta": {}
 }
 ```
 
@@ -123,8 +123,11 @@ Devices (aka MEATER probes) will only be returned after the following criteria i
 Additional information:
 
 * All temperatures are Celsius.
-* `elapsed` and `remaining` are in seconds.
-* `updated_at` is a UNIX timestamp
+* `cook.temperature.internal`: Internal temperature.
+* `cook.temperature.ambient`: Ambient temperature. If `ambient` is less than `internal`, `ambient` will equal `internal`.
+* `cook.time.elapsed`: Time since start of cook in seconds. Default: `0`.
+* `cook.time.remaining`: Remaining time in seconds. When unknown/calculating default is used. Default: `-1`.
+* `updated_at`: Time data was last updated at as a UNIX timestamp.
 
 Headers:
 
