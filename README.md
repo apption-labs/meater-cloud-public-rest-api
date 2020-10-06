@@ -94,7 +94,7 @@ Response:
     "status": "OK",
     "statusCode": 200,
     "data": {
-        "accessToken": "<JWT>",
+        "token": "<JWT>",
         "userId": "<User ID>"
     },
     "meta": {}
