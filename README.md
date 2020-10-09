@@ -20,7 +20,7 @@
   * Recommended: 2 requests per 60 seconds.
   * Maximum: 60 requests per 60 seconds.
 * Slow Down:
-  * To compliment the rate limit, requests are automatically slowed down once 10% of rate limit is reached.
+  * To complement the rate limit, requests are automatically slowed down once 10% of rate limit is reached.
   * Delay: Up to `1.0` second per request.
 * Authentication:
   * JSON Web Tokens (JWT) are used.
@@ -28,7 +28,7 @@
   * Authenticated requests are made with the header `Authorization: Bearer <JWT>`
   * The JWT doesn't expire but may be reset.
 * Localisation:
-  * English (US) is default.
+  * English (US) is the default.
   * Cook names can be translated (unless cook was given a name by the user) using the `Accept-Language` header with the [ISO_639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code. For example `Accept-Language: fr`.
   * The API supports languages supported by the MEATER app.
 
@@ -125,7 +125,7 @@ Additional information:
 * All temperatures are Celsius.
 * `cook.temperature.internal`: Internal temperature.
 * `cook.temperature.ambient`: Ambient temperature. If `ambient` is less than `internal`, `ambient` will equal `internal`.
-* `cook.time.elapsed`: Time since start of cook in seconds. Default: `0`.
+* `cook.time.elapsed`: Time since the start of cook in seconds. Default: `0`.
 * `cook.time.remaining`: Remaining time in seconds. When unknown/calculating default is used. Default: `-1`.
 * `updated_at`: Time data was last updated at as a UNIX timestamp.
 
