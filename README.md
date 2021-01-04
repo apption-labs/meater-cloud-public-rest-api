@@ -154,12 +154,14 @@ Response:
                     "id": "<Cook ID>",
                     "name": "<Cook name>",
                     "state": "<Cook state>",
+                    "temperature": {
+                        "target": 0,
+                        "peak": 0
+                    },
                     "time": {
                         "elapsed": 0,
                         "remaining": 0
-                    },
-                    "target": 0,
-                    "peak": 0
+                    }
                 },
                 "updated_at": 123456789
             },
