@@ -124,11 +124,22 @@ Devices (aka MEATER probes) will only be returned after the following criteria i
 Additional information:
 
 * All temperatures are Celsius.
-* `cook.temperature.internal`: Internal temperature.
-* `cook.temperature.ambient`: Ambient temperature. If `ambient` is less than `internal`, `ambient` will equal `internal`.
-* `cook.time.elapsed`: Time since the start of cook in seconds. Default: `0`.
-* `cook.time.remaining`: Remaining time in seconds. When unknown/calculating default is used. Default: `-1`.
-* `updated_at`: Time data was last updated at as a UNIX timestamp.
+* `device` object:
+  * `id`: Unique device ID.
+  * `temperature`:
+    * `internal`: Internal temperature.
+    * `ambient`: Ambient temperature. If `ambient` is less than `internal`, `ambient` will equal `internal`.
+  * `cook`: Object if cook setup or `null`
+    * `id`: Unique cook ID.
+    * `name`: Name of selected meat in your language or user given custom name.
+    * `state`: One of `Not Started`, `Configured`, `Started`, `Ready For Resting`, `Resting`, `Slightly Underdone`, `Finished`, `Slightly Overdone`, `OVERCOOK!`. Not translated.
+    * `temperature`:
+      * `target`: Target temperature.
+      * `peak`: Peak temperature reached during cook.
+    * `time`:
+      * `elapsed`: Time since the start of cook in seconds. Default: `0`.
+      * `remaining`: Remaining time in seconds. When unknown/calculating default is used. Default: `-1`.
+  * `updated_at`: Time data was last updated at as a UNIX timestamp.
 
 Headers:
 
