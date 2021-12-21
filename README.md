@@ -19,9 +19,6 @@
 * Rate limit:
   * Recommended: 2 requests per 60 seconds.
   * Maximum: 60 requests per 60 seconds.
-* Slow Down:
-  * To complement the rate limit, requests are automatically slowed down once 10% of rate limit is reached.
-  * Delay: Up to `1.0` second per request.
 * Authentication:
   * JSON Web Tokens (JWT) are used.
   * Make a request to the `/login` endpoint to obtain a token.
